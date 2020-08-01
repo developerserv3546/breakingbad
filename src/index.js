@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App';
+import BreakingBadContext from "./context/breaking-bad-context";
+import BreakingBadService from "./services/breaking-bad-service";
+
+const breakingBadContext = new BreakingBadService();
 
 ReactDOM.render(
-    <React.StrictMode>
+    <BreakingBadContext.Provider value={breakingBadContext}>
         <App/>
-    </React.StrictMode>,
+    </BreakingBadContext.Provider>,
     document.getElementById('root')
 );
 
